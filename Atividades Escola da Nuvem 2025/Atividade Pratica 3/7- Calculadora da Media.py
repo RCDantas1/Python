@@ -1,4 +1,4 @@
-7- Calculadora da Média
+'''7- Calculadora da Média
 Faça um programa que leia quatro números (N1, N2, N3, N4), cada um deles com uma casa decimal, 
 correspondente às quatro notas de um aluno. Calcule a média com pesos 2, 3, 4 e 1, respectivamente, 
 para cada uma destas notas e mostre esta média acompanhada pela mensagem "Media: ". 
@@ -18,4 +18,24 @@ Entrada: A entrada contém quatro números de ponto flutuante correspondentes à
 
 Saída: Todas as respostas devem ser apresentadas com uma casa decimal. 
 As mensagens devem ser impressas conforme a descrição do problema. 
-Não esqueça de imprimir o enter após o final de cada linha, caso contrário obterá "Presentation Error".
+Não esqueça de imprimir o enter após o final de cada linha, caso contrário obterá "Presentation Error".'''
+
+n1, n2, n3, n4 = map(float, input("Digite a nota: ").split())
+media = (n1*2 + n2*3 + n3*4 + n4*1) / 10
+print(f"Media: {media:.1f}")
+
+if media >= 7.0:
+    print("Aluno aprovado.")
+elif media < 5.0:
+    print("Aluno reprovado.")
+else:
+    print("Aluno em exame.")
+    exame = float(input())
+    print(f"Nota do exame: {exame:.1f}")
+    media_final = (media + exame) / 2
+    if media_final >= 5.0:
+        print("Aluno aprovado.")
+    else:
+        print("Aluno reprovado.")
+    print(f"Media final: {media_final:.1f}")
+
