@@ -10,3 +10,31 @@ Operação inválida
 Use try/except para capturar e tratar os erros apropriadamente.
 Após cada erro, o programa deve informar o usuário sobre o erro e solicitar nova entrada.
 Quando uma operação é concluída com sucesso, exiba o resultado e encerre o programa.'''
+
+while True:
+    try:
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        operacao = input("Digite a operação (+, -, *, /): ")
+
+        if operacao not in ['+', '-', '*', '/']:
+            print("Erro: Operação inválida. Tente novamente.")
+            continue
+
+        if operacao == '+':
+            resultado = num1 + num2
+        elif operacao == '-':
+            resultado = num1 - num2
+        elif operacao == '*':
+            resultado = num1 * num2
+        elif operacao == '/':
+            if num2 == 0:
+                print("Erro: Divisão por zero não é permitida.")
+                continue
+            resultado = num1 / num2
+
+        print(f"Resultado: {resultado}")
+        break
+
+    except ValueError:
+        print("Erro: Entrada inválida. Digite apenas números.")
